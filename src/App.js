@@ -5,6 +5,7 @@ import { LanguageProvider } from "./context/LanguageContext";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./ScrollToTop"; // 👈 1. استدعاء المكون هنا
 
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
@@ -15,7 +16,6 @@ import Contact from "./pages/Contact";
 import "./styles/global.css";
 import "./App.css";
 
-// فصلنا المكون ده عشان نقدر نستخدم useLocation بشكل صحيح جوة الـ Router
 function AnimatedRoutes() {
   const location = useLocation();
 
@@ -36,6 +36,7 @@ function App() {
   return (
     <LanguageProvider>
       <HashRouter>
+        <ScrollToTop /> {/* 👈 2. إضافة المكون هنا جوه الراوتر */}
         <Navbar />
         <AnimatedRoutes />
         <Footer />
