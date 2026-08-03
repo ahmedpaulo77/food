@@ -229,17 +229,28 @@ html[dir="ltr"] .search-icon { left: 16px; }
 .card-category-tag {
   position: absolute;
   top: 12px;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(8px);
   color: #ffffff;
   font-size: 11px;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 4px 14px;
   border-radius: 50px;
+  width: fit-content !important; /* يمنع التمدد تماماً */
+  max-width: 80%;               /* يضمن إنه مياخدش عرض الكارت كله */
+  white-space: nowrap;          /* يحافظ على الكلمة في سطر واحد */
+  z-index: 2;                   /* لضمان ظهوره فوق الصور والـ overlay */
 }
 
-html[dir="rtl"] .card-category-tag { right: 12px; }
-html[dir="ltr"] .card-category-tag { left: 12px; }
+html[dir="rtl"] .card-category-tag { 
+  right: 12px; 
+  left: auto;
+}
+
+html[dir="ltr"] .card-category-tag { 
+  left: 12px; 
+  right: auto;
+}
 
 .menu-card-body {
   padding: 20px;
