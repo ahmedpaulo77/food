@@ -173,7 +173,7 @@ const translations = {
       callUs: "Call Us",
       emailUs: "Email Us",
       location: "Our Location",
-      locationVal: "Benha, Qalyubia, Egypt",
+      locationVal: "Fifth Settlement, Cairo, Egypt",
       hours: "Working Hours",
       hoursVal: "Daily from 10 AM to 1 AM",
       namePlaceholder: "Full Name",
