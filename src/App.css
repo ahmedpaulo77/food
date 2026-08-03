@@ -1,38 +1,77 @@
+/* ==========================================
+   Global App Clean Setup & Image Fix
+   ========================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #faf8f5; /* تم تغيير الكحلي إلى لون بيج دافئ وفاتح يناسب تصميم المطعم */
+  color: #2d3748;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* حماية شاملة لمنع أي صورة من الخروج عن حجمها */
+img, svg {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* تحجيم الشعار والصورة الكبيرة التي تظهر في الواجهة */
+.hero-img, 
+.about-hero-img img, 
+.hero-image-wrapper img,
+.about-hero img {
+  max-width: 420px !important;
+  max-height: 420px !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 auto;
+  display: block;
+}
+
+/* تحجيم صور كروت المنيو بانتظام */
+.card-img-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-img-wrapper img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* ضبط الـ Container الموحد للموقع */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* تحسين التنقل والمحتوى الرئيسي */
+main, .main-content {
+  flex: 1;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

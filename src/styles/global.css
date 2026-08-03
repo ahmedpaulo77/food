@@ -1,0 +1,79 @@
+/* ==========================================
+   Global / Base Styles & Reset
+   ========================================== */
+:root {
+  --primary: #c27803;
+  --primary-dark: #9e5f02;
+  --primary-glow: rgba(194, 120, 3, 0.25);
+  --secondary: #064e3b;
+  --dark: #0f172a;
+  --cream: #f8f6f0;
+  --white: #ffffff;
+  --text-muted: #64748b;
+  --font-main: 'Cairo', 'Tahoma', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--cream);
+  color: var(--dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* أمان عام لجميع الصور */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* حل المربعات الشفافة الضاربة */
+.floating-blob {
+  position: absolute;
+  border-radius: 50% !important;
+  filter: blur(80px) !important;
+  opacity: 0.3 !important;
+  pointer-events: none;
+  z-index: 1;
+}
+/* ==========================================
+   Fix Big Images / About Page Hero Image
+   ========================================== */
+
+/* 1. حماية شاملة لصور صفحة About */
+.about-page img,
+.about-hero img,
+.about-img-wrapper img {
+  max-width: 100% !important;
+  max-height: 450px !important; /* أو الحجم المناسب للتصميم */
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important; /* يحافظ على أبعاد الصورة بدون تمدد */
+  display: block;
+  margin: 0 auto;
+}
+
+/* 2. تحجيم الحاوية نفسها اللي شايلة الصورة */
+.about-img-wrapper, 
+.about-hero-image {
+  max-width: 500px; /* بيضمن إن الصورة متكبرش عن الحجم دا */
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

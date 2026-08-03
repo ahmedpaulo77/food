@@ -1,0 +1,149 @@
+/* ==========================================
+   Navbar Core Styling (Clean & Transparent)
+   ========================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  backdrop-filter: none;
+  border-bottom: none !important; /* إزالة أي خط سفلي */
+  transition: all 0.4s ease;
+}
+
+.navbar--scrolled {
+  padding: 12px 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: none !important; /* إزالة خط الـ border عند السكرول */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100%;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Links Wrapper */
+.navbar-links {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 28px !important;
+}
+
+.navbar-links div {
+  display: flex;
+  align-items: center;
+}
+
+/* Links Style */
+.navbar-links a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  padding: 5px 0;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-links a:hover,
+.navbar-links a.active-link {
+  color: #fbbf24 !important;
+}
+
+/* تم إغلاق وتلغيم الخط الأصفر السفلي (::after) بناءً على طلبك */
+.navbar-links a.active-link::after {
+  display: none !important;
+}
+
+/* Language Toggle Button */
+.lang-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff !important;
+  padding: 7px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #fbbf24;
+  color: #fbbf24 !important;
+}
+
+/* CTA Button */
+.navbar-cta {
+  background: #d97706 !important;
+  color: #ffffff !important;
+  padding: 9px 22px !important;
+  border-radius: 25px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+  transition: all 0.3s ease !important;
+}
+
+.navbar-cta:hover {
+  background: #b45309 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.4);
+}
+
+/* Toggle Menu Button (Mobile Only) */
+.navbar-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 868px) {
+  .navbar-toggle {
+    display: block !important;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column !important;
+    padding: 25px 0;
+    gap: 18px !important;
+    border-bottom: none !important;
+    display: none !important;
+  }
+
+  .navbar-links.active {
+    display: flex !important;
+  }
+}
